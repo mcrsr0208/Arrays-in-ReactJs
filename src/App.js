@@ -27,6 +27,9 @@ class App extends React.Component{
     });
   }
   
+  removeThisItem = (event) =>{
+    console.log(event.target.remove());
+  }
 
   render(){
     return(
@@ -35,7 +38,7 @@ class App extends React.Component{
         <button onClick={ this.popAnimal }>Remove</button>
         <p>Animals</p>
         <ul>
-          { this.state.animals.map((animal) =>{ return <li key={animal.id}>{animal}</li> }) }
+          { this.state.animals.map((animal) =>{ return <li  key={animal.id}  onClick={this.removeThisItem}>{animal}</li> }) }
         </ul>
       </div>
     );
